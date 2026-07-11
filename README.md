@@ -5,7 +5,7 @@ A production-grade, enterprise-level RAG system built with **LangGraph**, **Port
 ## Key Features
 
 - **Agentic Intelligence**: LangGraph for cyclic reasoning, multi-step planning, and conversation memory.
-- **Guardrails**: NeMo Guardrails gate blocks off-topic, jailbreak, and injection inputs before any retrieval.
+- **Guardrails**: Deep team  Guardrails gate blocks off-topic, jailbreak, and injection inputs before any retrieval.
 - **LLM Gateway**: Portkey routes all LLM calls with automatic fallback between primary and backup Groq keys.
 - **Enterprise Search**: Qdrant Cloud for high-performance vector search + FlashRank for local semantic reranking.
 - **Gemini Embeddings**: Google `gemini-embedding-2-preview` (3072-dim) via `langchain-google-genai`.
@@ -41,7 +41,7 @@ graph TD
 │   ├── agents/
 │   │   └── nodes/       # Planner, Retriever, Responder LangGraph nodes
 │   ├── gateway/         # Portkey LLM gateway — primary + fallback Groq routing
-│   ├── guardrails/      # NeMo Guardrails input/output filtering
+│   ├── Guardrails/      # Deep Team  Guardrails input/output filtering
 │   ├── ingestion/
 │   │   ├── chunking/    # Paragraph-based text splitter (1500 char max)
 │   │   └── loaders/     # Local parsers — PDF (pypdf), HTML, TXT, DOCX, PPTX
@@ -65,7 +65,7 @@ graph TD
 |-------|-----------|
 | Orchestration | LangChain + LangGraph |
 | LLMs | Groq (Llama 3.3 70B) via **Portkey** gateway |
-| Guardrails | NeMo Guardrails |
+| Guardrails | Deep Team Guardrails |
 | Vector DB | Qdrant Cloud |
 | Reranking | FlashRank (local, zero-latency) |
 | Embeddings | Gemini `gemini-embedding-2-preview` (3072-dim) |
