@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+
+    ports:
+      - "9999:9999"
+
+
+  frontend:
+    build:
+      context: .
+      dockerfile: ui/Dockerfile.frontend
+
+    depends_on:
+      - backend
+
+    ports:
+      - "8501:8501"
+
+    environment:
+      BACKEND_URL: http://backend:9999
